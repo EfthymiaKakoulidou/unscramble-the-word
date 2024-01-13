@@ -1,3 +1,12 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+animals = ['cat','dog','horse']
+countries = ['greece', 'italy', 'sweden']
+food = ['pasta', 'rice', 'meat']
+
+print('Hello Tim! Ready to unscrable the word?')
+print('You will be given words whose letters are scrambled.')
+print('Your goal is to unscramble them and find the word')
+print('Please provide the number of the category of words you want to play with')
+print('1.Animals 2. Countries 3. Food')
+
+def category_selection():
+
