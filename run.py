@@ -22,8 +22,14 @@ def category_choice():
             shuffle(l)
             scrambled_word = ''.join(l)
             print(scrambled_word)
-            players_answer()
+            def players_answer():
+                while True:
+                    players_guess = input('Unscramble here:\n')
+                    if validation_words(players_guess, unscrambled_word):
+                        break
 
+            players_answer()
+            break
         if number == '2':
             print('You chose "Countries"\n')
             print('Your scrambled word is:\n')
@@ -32,7 +38,14 @@ def category_choice():
             shuffle(l)
             scrambled_word = ''.join(l)
             print(scrambled_word)
+            def players_answer():
+                while True:
+                    players_guess = input('Unscramble here:\n')
+                    if validation_words(players_guess, unscrambled_word):
+                        break
+
             players_answer()
+            break
 
         if number == '3':
             print('You chose "Food"\n')
@@ -42,7 +55,14 @@ def category_choice():
             shuffle(l)
             scrambled_word = ''.join(l)
             print(scrambled_word)
+            def players_answer():
+                while True:
+                    players_guess = input('Unscramble here:\n')
+                    if validation_words(players_guess, unscrambled_word):
+                        break
+
             players_answer()
+            break
 
         if validation_numbers(number):
             break
@@ -62,9 +82,6 @@ def validation_numbers(number):
         return False
     return True
 
-def players_answer(players_guess,unscrambled_word):
-    players_guess = input('Unscramble here: \n')
-    validation_words(players_guess, unscrambled_word)
 
 def validation_words(players_guess, unscrambled_word):
 
@@ -79,6 +96,8 @@ def validation_words(players_guess, unscrambled_word):
             )
     except ValueError as e:
         print('Please try again.\n')
+        return False
+    return True
 
 def main():
     """
