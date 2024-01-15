@@ -18,6 +18,8 @@ def category_choice():
             print('You chose "Animals"\n')
             print('Your scrambled word is:\n')
             unscrambled_word = random.choice(animals)
+            x = animals.index(unscrambled_word)
+            animals.pop(x)
             l = list(unscrambled_word)
             shuffle(l)
             scrambled_word = ''.join(l)
@@ -34,6 +36,8 @@ def category_choice():
             print('You chose "Countries"\n')
             print('Your scrambled word is:\n')
             unscrambled_word = random.choice(countries)
+            x = countries.index(unscrambled_word)
+            countries.pop(x)
             l = list(unscrambled_word)
             shuffle(l)
             scrambled_word = ''.join(l)
@@ -51,6 +55,8 @@ def category_choice():
             print('You chose "Food"\n')
             print('Your scrambled word is:\n')
             unscrambled_word = random.choice(food)
+            x = food.index(unscrambled_word)
+            food.pop(x)
             l = list(unscrambled_word)
             shuffle(l)
             scrambled_word = ''.join(l)
@@ -89,6 +95,11 @@ def validation_words(players_guess, unscrambled_word):
     Raises error if the input is not of the correct type, in the correct order
     or does not have the correct length
     """
+
+    if str(players_guess)== str(unscrambled_word):
+        print('Right! Next word:')
+        category_choice()
+
     try:
         if str(players_guess)!= str(unscrambled_word):
             raise ValueError(
