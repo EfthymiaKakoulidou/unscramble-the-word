@@ -9,13 +9,13 @@ def game(score):
 
     # Categories
     
-    animals = ['cat','dog','horse']
-    countries = ['greece','italy', 'sweden']
-    food = ['pasta', 'rice', 'eggs']
+    animals = ['CAT','DOG','HORSE','GIRAFFE','ELEPHANT']
+    countries = ['GREECE','ITALY', 'SWEDEN', 'GERMANY', 'FRANCE']
+    food = ['PASTA', 'RICE', 'EGGS', 'BREAD', 'PANCAKES']
 
     print('Ready to unscrable the word?\n')
-    username = input('Enter username: ')
-    print(f'Hello {username}!')
+    username = input('Enter username: \n')
+    print(f'Hello {username}!\n')
     print('You will be given words whose letters are scrambled.\n')
     print('Your goal is to unscramble them and find the word.\n')
     print('Please provide the number of the category of words you want to play with:\n')
@@ -29,7 +29,7 @@ def game(score):
         Validates it.
         """
         while True:
-            number = input("Enter your choice here:")
+            number = input("Enter your choice here:\n")
             if number == '1':
                 print('You chose "Animals"\n')
                 scramble_word(animals)
@@ -43,7 +43,7 @@ def game(score):
                 scramble_word(food) 
 
             else:
-                print(f'{number} is invalid. Please try again.')
+                print(f'{number} is invalid. Please try again.\n')
                 category_choice()
             return True
 
@@ -83,7 +83,7 @@ def game(score):
         Player's input and validation
         """
         while True:
-            players_guess = input('Unscramble here:\n').lower()
+            players_guess = input('Unscramble here:\n')
             if validation_words(players_guess, unscrambled_word,scrambled_word):
                 break
 
@@ -97,7 +97,7 @@ def game(score):
         global score
         if str(players_guess) == str(unscrambled_word):
             score = score + 1
-            print(f'Right! Your Score is : {score}')
+            print(f'Right! Your Score is : {score}\n')
             return True
 
         else:
@@ -116,7 +116,7 @@ def game(score):
                 players_answer(unscrambled_word, scrambled_word)
                 return True
             else:
-                print('Your answer is invalid. Do you want to try again? y/n :')
+                print('Your answer is invalid. Do you want to try again? y/n :\n')
                 
             return False
 
@@ -130,12 +130,12 @@ def game(score):
             answer = input('Would you like to play again y/n?\n').lower()
            # clear()
             if answer == 'n':
-                print('Thanks for playing')
+                print('Thanks for playing!\n')
                 exit()
             elif answer == 'y':
                 game(score)
             else:
-                print(f'{answer} is invalid. Please try again.')
+                print(f'{answer} is invalid. Please try again.\n')
                 break
 
     # Calls the functions and starts the game
