@@ -2,6 +2,8 @@ import random
 import os
 from colorama import Fore
 
+score = 0
+
 # Categories
 
 animals = ['cat','dog','horse']
@@ -79,7 +81,8 @@ def play_again():
         else:
             print(f'{answer} is invalid. Please try again.')
             break
-            
+
+
 # Function that validates player's answer
 
 def validation_words(players_guess, unscrambled_word):
@@ -88,13 +91,14 @@ def validation_words(players_guess, unscrambled_word):
     Raises error if the input is not of the correct type, in the correct order
     or does not have the correct length
     """
-
+    global score
     if str(players_guess) == str(unscrambled_word):
-        print('Right!')
+        score = score + 1
+        print(f'Right! Your Score is : {score} ')
         return True
 
     else:
-        print('The answer you provided is wrong')
+        print(f'The answer you provided is wrong. Your score is {score}')
         return False
 
 # Calls the functions and starts the game
