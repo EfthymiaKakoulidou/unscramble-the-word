@@ -1,6 +1,5 @@
 import random
 import os
-from colorama import Fore
 
 # Global variable that will be used to update the score
 
@@ -68,7 +67,7 @@ def game(score):
             while l == unscrambled_word:
                 random.shuffle(l)
             scrambled_word = ''.join(l)
-            print(Fore.RED + scrambled_word  + Fore.RESET)
+            print(scrambled_word)
             players_answer(unscrambled_word, scrambled_word)
         else:
             print("No words left to unscramble. Game Over")
