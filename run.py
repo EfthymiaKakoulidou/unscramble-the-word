@@ -1,51 +1,13 @@
 import random
 import os
 
+# Categories
+
 animals = ['cat','dog','horse']
 countries = ['greece','italy', 'sweden']
 food = ['pasta', 'rice', 'eggs']
 
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-def players_answer(unscrambled_word, scrambled_word):
-    while True:
-        players_guess = input('Unscramble here:\n').lower()
-        print(scrambled_word)
-        if validation_words(players_guess, unscrambled_word):
-            break
-
-def play_again():
-    while True:
-        answer = input('Would you like to play again Y/N?\n').lower()
-
-        clear()
-        if answer == 'n':
-            print('Thanks for playing')
-            exit()
-        elif answer == 'y':
-            category_choice()
-        else:
-            print(f'{answer} is invalid. Please try again.')
-            break
-            
-def scramble_word(category):
-    
-    while len(category) > 0 :
-        print('Your scrambled word is:\n')
-        unscrambled_word = random.choice(category)
-        x = category.index(unscrambled_word)
-        category.pop(x)
-        l = list(unscrambled_word)
-        random.shuffle(l)
-        while l == unscrambled_word:
-            random.shuffle(l)
-        scrambled_word = ''.join(l)
-        print(scrambled_word)
-        players_answer(unscrambled_word, scrambled_word)
-    else:
-        print("Game Over")
-        play_again()
+# Player chooses category
 
 def category_choice():
     while True:
@@ -69,7 +31,55 @@ def category_choice():
             break
         else:
             print(f'{number} is invalid. Please try again.')
+
+# Function that scrambles the word from the category the player chose
+
+def scramble_word(category):
     
+    while len(category) > 0 :
+        print('Your scrambled word is:\n')
+        unscrambled_word = random.choice(category)
+        x = category.index(unscrambled_word)
+        category.pop(x)
+        l = list(unscrambled_word)
+        random.shuffle(l)
+        while l == unscrambled_word:
+            random.shuffle(l)
+        scrambled_word = ''.join(l)
+        print(scrambled_word)
+        players_answer(unscrambled_word, scrambled_word)
+    else:
+        print("Game Over")
+        play_again()
+    
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+# Players answer
+
+def players_answer(unscrambled_word, scrambled_word):
+    while True:
+        players_guess = input('Unscramble here:\n').lower()
+        if validation_words(players_guess, unscrambled_word):
+            break
+
+# Function to restart game or not
+
+def play_again():
+    while True:
+        answer = input('Would you like to play again Y/N?\n').lower()
+
+        clear()
+        if answer == 'n':
+            print('Thanks for playing')
+            exit()
+        elif answer == 'y':
+            category_choice()
+        else:
+            print(f'{answer} is invalid. Please try again.')
+            break
+            
+# Function that validates player's answer
 
 def validation_words(players_guess, unscrambled_word):
 
@@ -85,6 +95,8 @@ def validation_words(players_guess, unscrambled_word):
     else:
         print('The answer you provided is wrong')
         return False
+
+# Calls the functions and starts the game
 
 if __name__ == '__main__':
     clear()
