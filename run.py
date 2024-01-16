@@ -1,5 +1,6 @@
 import random
 import os
+from colorama import Fore
 
 # Categories
 
@@ -46,7 +47,7 @@ def scramble_word(category):
         while l == unscrambled_word:
             random.shuffle(l)
         scrambled_word = ''.join(l)
-        print(scrambled_word)
+        print(Fore.RED + scrambled_word  + Fore.RESET)
         players_answer(unscrambled_word, scrambled_word)
     else:
         print("Game Over")
