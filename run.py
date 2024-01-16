@@ -41,7 +41,7 @@ def game(score):
                 
             elif number == '3':
                 print('You chose "Food"\n')
-                scramble_word(food)
+                scramble_word(food) 
 
             else:
                 print(f'{number} is invalid. Please try again.')
@@ -54,7 +54,7 @@ def game(score):
         """
         Chooses randomly an item from the list chosen.
         Takes it out of the list.
-        Shyffles the item/word.
+        Shuffles the item/word.
         Calls the player's answer function.
         Calls the play again function when there are no items left on the list.
         """
@@ -92,7 +92,7 @@ def game(score):
 
     def validation_words(players_guess, unscrambled_word,scrambled_word):
         """
-        Raises error if the input is not of correct
+        Raises error if the input is not correct
         Gives the option to retry
         """
         global score
@@ -106,7 +106,13 @@ def game(score):
             retry = input('Do you want to try again? y/n : ')
             if retry == 'n':
                 print('Next word:')
-               
+                if len(animals)<len(food):
+                    scramble_word(animals)
+                elif len(food)<len(animals):
+                    scramble_word(food)
+                else:
+                    scramble_word(countries)
+
             elif retry == 'y':
                 players_answer(unscrambled_word, scrambled_word)
                 return True
@@ -118,9 +124,12 @@ def game(score):
     # Function to restart game or not
 
     def play_again():
+        """
+        Option to reset the game
+        """
         while True:
             answer = input('Would you like to play again y/n?\n').lower()
-            clear()
+           # clear()
             if answer == 'n':
                 print('Thanks for playing')
                 exit()
