@@ -11,7 +11,6 @@ def clear():
 def players_answer(unscrambled_word, scrambled_word):
     while True:
         players_guess = input('Unscramble here:\n').lower()
-        clear()
         print(scrambled_word)
         if validation_words(players_guess, unscrambled_word):
             break
@@ -82,7 +81,6 @@ def validation_words(players_guess, unscrambled_word):
     if str(players_guess) == str(unscrambled_word):
         print('Right!')
         return True
-       # category_choice(number)
 
     else:
         print('The answer you provided is wrong')
@@ -90,7 +88,9 @@ def validation_words(players_guess, unscrambled_word):
 
 if __name__ == '__main__':
     clear()
-    print('Hello Tim! Ready to unscrable the word?\n')
+    print('Ready to unscrable the word?\n')
+    username = input('Enter username: ')
+    print(f'Hello {username}!')
     print('You will be given words whose letters are scrambled.\n')
     print('Your goal is to unscramble them and find the word.\n')
     print('Please provide the number of the category of words you want to play with:\n')
