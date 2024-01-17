@@ -19,7 +19,7 @@ def game(score):
     print('You will be given words whose letters are scrambled.\n')
     print('Your goal is to unscramble them and find the word.\n')
     print('Please provide the number of the category of words you want to play with:\n')
-    print('\033[1;32m 1. Animals 2. Countries 3. Food \n')
+    
     
     # Player chooses category
 
@@ -29,6 +29,7 @@ def game(score):
         Validates it.
         """
         while True:
+            print('\033[1;32m 1. Animals 2. Countries 3. Food \n')
             number = input("Enter your choice here:\n")
             if number == '1':
                 print('You chose "Animals"\n')
@@ -139,7 +140,7 @@ def game(score):
                 print('Thanks for playing!\n')
                 exit()
             elif answer == 'Y':
-                game(score)
+                category_choice()
             else:
                 print(f'{answer} is invalid. Please try again.\n')
                 
