@@ -90,8 +90,12 @@ def scramble_word(category):
         random.shuffle(l)
         while l == unscrambled_word:
             random.shuffle(l)
-        scrambled_word = ''.join(l)
-        print(Colors.RED + scrambled_word + Colors.RESET)
+        scrambled_word = str(''.join(l))
+        
+        # Print the word with spaces between the letters
+        for char in scrambled_word:
+            print(Colors.RED + char, end=" " + Colors.RESET)
+        
         players_answer(unscrambled_word, scrambled_word)
     else:
         print("Game Over")
@@ -120,7 +124,7 @@ def validation_words(players_guess, unscrambled_word,scrambled_word):
     
     if str(players_guess) == str(unscrambled_word):
         score = score + 1
-        print(f'Right! Your Score is : {score}\n')
+        print('Correct! ' + Colors.GREEN + unscrambled_word + Colors.RESET + f'\nYour Score is : {score}\n')
         if len(animals)<len(food):
             scramble_word(animals)
         elif len(food)<len(animals):
@@ -128,7 +132,8 @@ def validation_words(players_guess, unscrambled_word,scrambled_word):
         else:
             scramble_word(countries)
     else:
-        print(f'The answer you provided is wrong. Your score is {score}')
+        print('The answer you provided is wrong.')
+        print(f'Your score is {score}')
     while True:    
         retry = input('Do you want to try again? Y/N : ')
         if retry == 'N':
@@ -164,7 +169,7 @@ def play_again():
             print(f'{answer} is invalid. Please try again.\n')
             
 if t==0 :
-    print('Your time is up\n')
+    print('Your time is up!\n')
     play_again()
 
 # Calls the functions and starts the game
