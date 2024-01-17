@@ -19,7 +19,7 @@ def game(score):
     print('You will be given words whose letters are scrambled.\n')
     print('Your goal is to unscramble them and find the word.\n')
     print('Please provide the number of the category of words you want to play with:\n')
-    print('1. Animals 2. Countries 3. Food \n')
+    print('\033[1;32m 1. Animals 2. Countries 3. Food \n')
     
     # Player chooses category
 
@@ -33,19 +33,21 @@ def game(score):
             if number == '1':
                 print('You chose "Animals"\n')
                 scramble_word(animals)
+                break
                 
             elif number == '2':
                 print('You chose "Countries"\n')
                 scramble_word(countries)
+                break
                 
             elif number == '3':
                 print('You chose "Food"\n')
                 scramble_word(food) 
+                break
 
             else:
                 print(f'{number} is invalid. Please try again.\n')
-                category_choice()
-            return True
+                
 
     # Function that scrambles the word from the category the player chose
 
@@ -82,10 +84,10 @@ def game(score):
         """
         Player's input and validation
         """
-        while True:
-            players_guess = input('Unscramble here:\n')
-            if validation_words(players_guess, unscrambled_word,scrambled_word):
-                break
+       
+        players_guess = input('\nUnscramble here:\n')
+        validation_words(players_guess, unscrambled_word,scrambled_word)
+                
 
     # Function that validates player's answer
 
@@ -95,15 +97,21 @@ def game(score):
         Gives the option to retry
         """
         global score
+        
         if str(players_guess) == str(unscrambled_word):
             score = score + 1
             print(f'Right! Your Score is : {score}\n')
-            return True
-
+            if len(animals)<len(food):
+                scramble_word(animals)
+            elif len(food)<len(animals):
+                scramble_word(food)
+            else:
+                scramble_word(countries)
         else:
             print(f'The answer you provided is wrong. Your score is {score}')
-            retry = input('Do you want to try again? y/n : ')
-            if retry == 'n':
+        while True:    
+            retry = input('Do you want to try again? Y/N : ')
+            if retry == 'N':
                 print('Next word:')
                 if len(animals)<len(food):
                     scramble_word(animals)
@@ -111,15 +119,13 @@ def game(score):
                     scramble_word(food)
                 else:
                     scramble_word(countries)
-
-            elif retry == 'y':
+                    break
+            elif retry == 'Y':
                 players_answer(unscrambled_word, scrambled_word)
-                return True
+                break
             else:
-                print('Your answer is invalid. Do you want to try again? y/n :\n')
-                
-            return False
-
+                print('Your answer is invalid.\n') 
+    
     # Function to restart game or not
 
     def play_again():
@@ -127,20 +133,26 @@ def game(score):
         Option to reset the game
         """
         while True:
-            answer = input('Would you like to play again y/n?\n').lower()
+            answer = input('Would you like to play again Y/N?\n')
            # clear()
-            if answer == 'n':
+            if answer == 'N':
                 print('Thanks for playing!\n')
                 exit()
-            elif answer == 'y':
+            elif answer == 'Y':
                 game(score)
             else:
                 print(f'{answer} is invalid. Please try again.\n')
-                break
+                
 
     # Calls the functions and starts the game
 
     if __name__ == '__main__':
        # clear()
         category_choice()
+        if len(animals)<len(food):
+            scramble_word(animals)
+        elif len(food)<len(animals):
+            scramble_word(food)
+        else:
+            scramble_word(countries)
 game(score)
