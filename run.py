@@ -24,8 +24,11 @@ print('You will be given words whose letters are scrambled.\n')
 print('Your goal is to unscramble as many words as you can in 30s.\n')
 print('Please provide the number of the category of words you want to play with:\n')
 
-def game():
-    
+def game(score):
+    def reset_score():
+        global score
+        score = 0
+    reset_score()
     # Categories
 
     animals = ['CAT','DOG','HORSE','GIRAFFE','ELEPHANT']
@@ -166,7 +169,7 @@ def game():
                 print('Thanks for playing!\n')
                 exit()
             elif answer == 'Y':
-                game()
+                game(score)
             else:
                 print(f'{answer} is invalid. Please try again.\n')
                 
@@ -186,4 +189,4 @@ def game():
         else:
             scramble_word(countries)
 
-game()
+game(score)
