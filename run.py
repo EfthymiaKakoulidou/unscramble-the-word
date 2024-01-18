@@ -17,7 +17,9 @@ class Colors:
 
 score = 0
 
-print('\n🅄 🄽 🅂 🄲 🅁 🄰 🄼 🄱 🄻 🄴   🅃 🄷 🄴  🅆 🄾 🅁 🄳\n')
+print('\n🅄 🄽 🅂 🄲 🅁 🄰 🄼 🄱 🄻 🄴\n')
+print('\n🅃 🄷 🄴\n')
+print('\n🅆 🄾 🅁 🄳\n')
 
 print('Ready to unscrable the word?\n')
 username = input('Enter username: \n')
@@ -40,6 +42,11 @@ def game(score):
             t -= 1
     t=30
     def reset_score():
+        """
+        Function that resets the score when the
+        player has played all the words and wants
+        to play again
+        """
         global score
         score = 0
     reset_score()
@@ -106,7 +113,7 @@ def game(score):
             players_answer(unscrambled_word, scrambled_word)
             
         else:
-            print("Game Over")
+            print(f"Game Over. Your score is: {score}")
             play_again()
         
     #def clear():
@@ -128,12 +135,13 @@ def game(score):
         """
         Raises error if the input is not correct
         Gives the option to retry
+        Updates the score
         """
         global score
         
         if str(players_guess) == str(unscrambled_word):
             score = score + 1
-            print('Correct! ' + Colors.GREEN + unscrambled_word + Colors.RESET + f'\nYour Score is : {score}\n')
+            print('Correct! The answer is: ' + Colors.GREEN + unscrambled_word + Colors.RESET + f'\nYour Score is : {score}\n')
             if len(animals)<len(food):
                 scramble_word(animals)
             elif len(food)<len(animals):
@@ -144,7 +152,7 @@ def game(score):
             print('The answer you provided is wrong.')
             print(f'Your score is {score}')
         while True:    
-            retry = input('Do you want to try again? Y/N : ')
+            retry = input('\nDo you want to try again? Y/N For exit press E: \n')
             if retry == 'N':
                 print('Next word:')
                 if len(animals)<len(food):
@@ -157,6 +165,8 @@ def game(score):
             elif retry == 'Y':
                 players_answer(unscrambled_word, scrambled_word)
                 break
+            elif retry == 'E':
+                exit()
             else:
                 print('Your answer is invalid.\n') 
 
