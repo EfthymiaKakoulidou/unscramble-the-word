@@ -197,7 +197,7 @@ def game(score):
             else:
                 print('\nYour answer is invalid.\n')
         if retry == 'H':
-            print(f'\nThe first letter is: {unscrambled_word[0]}\n')
+            print('\nThe first letter is: ' + Colors.GREEN + f'{unscrambled_word[0]}' + Colors.RESET + '.\n')
             players_answer2(unscrambled_word, scrambled_word)
 
     def validation_words2(players_guess, unscrambled_word,scrambled_word):
@@ -221,7 +221,7 @@ def game(score):
         else:
             print('\nThe answer you provided is wrong.\n')
             if players_guess[0] != unscrambled_word[0]:
-                print(f'Remember your word starts with {unscrambled_word[0]}.')
+                print('Remember your word starts with' + Colors.GREEN + f' {unscrambled_word[0]}'+ Colors.RESET + '!\n')
             print(f'\nYour score is {score}\n')
         while True:    
             retry = input('\nNo more hints.Do you want to try again? Y/N\nExit? E: \n').upper()
