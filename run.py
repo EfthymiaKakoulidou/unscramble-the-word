@@ -113,7 +113,7 @@ def game(score):
             players_answer(unscrambled_word, scrambled_word)
             
         else:
-            print(f"Game Over. Your score is: {score}")
+            print("Game Over.")
             play_again()
         
     #def clear():
@@ -154,12 +154,23 @@ def game(score):
         while True:    
             retry = input('\nDo you want to try again? Y/N For exit press E: \n'). upper()
             if retry == 'N':
-                print('Next word:')
-                if len(animals)<len(food):
+                if len(animals)<len(food) and len(animals) != 0:
+                    print('Next word:')
                     scramble_word(animals)
-                elif len(food)<len(animals):
+                elif len(animals) == 0:
+                    print('Game Over')
+                    play_again()
+                elif len(food)<len(animals) and len(food) != 0:
+                    print('Next word:')
                     scramble_word(food)
+                elif len(food) == 0:
+                    print('Game Over')
+                    play_again()
+                elif len(countries) == 0:
+                    print('Game Over')
+                    play_again()
                 else:
+                    print('Next word:')
                     scramble_word(countries)
                     break
             elif retry == 'Y':
@@ -170,6 +181,7 @@ def game(score):
             else:
                 print('Your answer is invalid.\n') 
 
+
     # Function to restart game or not
 
     def play_again():
@@ -177,6 +189,7 @@ def game(score):
         Option to reset the game
         """
         while True:
+            
             answer = input('Would you like to play again Y/N?\n'). upper()
             # clear()
             if answer == 'N':
