@@ -240,7 +240,7 @@ def game(score):
                     print('\nGame Over\n')
                     play_again()
                 elif len(countries) == 0:
-                    print('\nGame Over\n')
+                    print('\n🅶 🅰  🅼 🅴  🅾  🆅 🅴 🆁 \n')
                     play_again()
                 else:
                     print('\nNext word:\n')
