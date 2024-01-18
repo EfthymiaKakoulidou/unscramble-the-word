@@ -17,9 +17,9 @@ class Colors:
 
 score = 0
 
-print('\n🅄 🄽 🅂 🄲 🅁 🄰 🄼 🄱 🄻 🄴\n')
-print('\n🅃 🄷 🄴\n')
-print('\n🅆 🄾 🅁 🄳\n')
+print('\n🆄 🅽 🆂 🅲 🆁 🅰  🅼 🅱  🅻 🅴\n')
+print('\n🆃 🅷 🅴\n')
+print('\n🆆 🅾  🆁 🅳\n')
 
 print('Ready to unscrable the word?\n')
 username = input('Enter username: \n')
