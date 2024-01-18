@@ -25,7 +25,7 @@ print('Ready to unscrable the word?\n')
 username = input('Enter username: \n')
 print(f'Hello {username}!\n')
 print('You will be given words whose letters are scrambled.\n')
-print('Your goal is to unscramble as many words as you can in 30s.\n')
+print('Your goal is to unscramble as many words as you can.\n')
 print('Please provide the number of the category of words you want to play with:\n')
 
     
@@ -64,21 +64,24 @@ def game(score):
         Validates it.
         """
         while True:
-            print(Colors.BLUE + '1. Animals 2. Countries 3. Food \n' + Colors.RESET)
+            print(Colors.BLUE + '1. Animals \n2. Countries \n3. Food \n' + Colors.RESET)
             number = input("Enter your choice here:\n")
             if number == '1':
                 print('You chose "Animals"\n')
+                clear()
                 scramble_word(animals)
                 break
                 
             elif number == '2':
                 print('You chose "Countries"\n')
+                clear()
                 scramble_word(countries)
                 break
                 
             elif number == '3':
                 print('You chose "Food"\n')
-                scramble_word(food) 
+                clear()
+                scramble_word(food)
                 break
 
             else:
@@ -116,8 +119,8 @@ def game(score):
             print("Game Over.")
             play_again()
         
-    #def clear():
-        #os.system('cls' if os.name == 'nt' else 'clear')
+    def clear():
+        os.system('cls' if os.name == 'nt' else 'clear')
 
     # Players answer
     
@@ -129,10 +132,19 @@ def game(score):
         players_guess = input('\nUnscramble here:\n'). upper()
         validation_words(players_guess, unscrambled_word,scrambled_word)      
 
+    def players_answer2(unscrambled_word, scrambled_word):
+        """
+        Player's input and validation
+        """
+        
+        players_guess = input('\nUnscramble here:\n'). upper()
+        validation_words2(players_guess, unscrambled_word,scrambled_word) 
+
     # Function that validates player's answer
 
     def validation_words(players_guess, unscrambled_word,scrambled_word):
         """
+        Validates the answer the first time and offers a hint.
         Raises error if the input is not correct
         Gives the option to retry
         Updates the score
@@ -152,8 +164,9 @@ def game(score):
             print('The answer you provided is wrong.')
             print(f'Your score is {score}')
         while True:    
-            retry = input('\nDo you want to try again? Y/N For exit press E: \n'). upper()
+            retry = input('\nDo you want to try again without hint? Y/N\nDo you want a hint? H\nExit? E: \n').upper()
             if retry == 'N':
+                clear()
                 if len(animals)<len(food) and len(animals) != 0:
                     print('Next word:')
                     scramble_word(animals)
@@ -176,11 +189,69 @@ def game(score):
             elif retry == 'Y':
                 players_answer(unscrambled_word, scrambled_word)
                 break
+            elif retry == 'H':
+                break
             elif retry == 'E':
                 exit()
             else:
-                print('Your answer is invalid.\n') 
+                print('Your answer is invalid.\n')
+        if retry == 'H':
+            print(f'The first letter is: {unscrambled_word[0]}')
+            players_answer2(unscrambled_word, scrambled_word)
 
+    def validation_words2(players_guess, unscrambled_word,scrambled_word):
+        """
+        Validates the answers after the first time.
+        Raises error if the input is not correct
+        Gives the option to retry
+        Updates the score
+        """
+        global score
+        
+        if str(players_guess) == str(unscrambled_word):
+            score = score + 1
+            print('Correct! The answer is: ' + Colors.GREEN + unscrambled_word + Colors.RESET + f'\nYour Score is : {score}\n')
+            if len(animals)<len(food):
+                scramble_word(animals)
+            elif len(food)<len(animals):
+                scramble_word(food)
+            else:
+                scramble_word(countries)
+        else:
+            print('The answer you provided is wrong.')
+            print(f'Your score is {score}')
+        while True:    
+            retry = input('\nNo more hints.Do you want to try again? Y/N\nExit? E: \n').upper()
+            if retry == 'N':
+                clear()
+                if len(animals)<len(food) and len(animals) != 0:
+                    print('Next word:')
+                    scramble_word(animals)
+                elif len(animals) == 0:
+                    print('Game Over')
+                    play_again()
+                elif len(food)<len(animals) and len(food) != 0:
+                    print('Next word:')
+                    scramble_word(food)
+                elif len(food) == 0:
+                    print('Game Over')
+                    play_again()
+                elif len(countries) == 0:
+                    print('Game Over')
+                    play_again()
+                else:
+                    print('Next word:')
+                    scramble_word(countries)
+                    break
+            elif retry == 'Y':
+                players_answer(unscrambled_word, scrambled_word)
+                break
+            elif retry == 'H':
+                break
+            elif retry == 'E':
+                exit()
+            else:
+                print('Your answer is invalid.\n')
 
     # Function to restart game or not
 
