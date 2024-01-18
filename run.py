@@ -126,7 +126,7 @@ def game(score):
         Player's input and validation
         """
         
-        players_guess = input('\nUnscramble here:\n')
+        players_guess = input('\nUnscramble here:\n'). upper()
         validation_words(players_guess, unscrambled_word,scrambled_word)      
 
     # Function that validates player's answer
@@ -152,7 +152,7 @@ def game(score):
             print('The answer you provided is wrong.')
             print(f'Your score is {score}')
         while True:    
-            retry = input('\nDo you want to try again? Y/N For exit press E: \n')
+            retry = input('\nDo you want to try again? Y/N For exit press E: \n'). upper()
             if retry == 'N':
                 print('Next word:')
                 if len(animals)<len(food):
@@ -177,7 +177,7 @@ def game(score):
         Option to reset the game
         """
         while True:
-            answer = input('Would you like to play again Y/N?\n')
+            answer = input('Would you like to play again Y/N?\n'). upper()
             # clear()
             if answer == 'N':
                 print('Thanks for playing!\n')
