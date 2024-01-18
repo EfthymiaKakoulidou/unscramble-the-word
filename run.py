@@ -29,7 +29,7 @@ print('Ready to unscrable the word?\n')
 username = input('Enter username: \n')
 clear()
 print(f'Hello {username}!\n')
-print('You will be given 10 words whose letters are scrambled.\n')
+print('You will be given 5 words whose letters are scrambled.\n')
 print('Your goal is to unscramble as many words as you can.\n')
 print('If you find the word without a hint you get 2 points.If you use a hint you get 1.\n')
 print('Please provide the number of the category of words you want to play with:\n')
@@ -105,6 +105,7 @@ def game(score):
         Calls the player's answer function.
         Calls the play again function when there are no items left on the list.
         """
+        global score
         while len(category) > 0:
             time.sleep(1)
             clear()
@@ -122,10 +123,9 @@ def game(score):
             for char in scrambled_word:
                 print(Colors.RED + char, end=" " + Colors.RESET)
             players_answer(unscrambled_word, scrambled_word)
-            
         else:
-            clear()
-            print("\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁.\n")
+            print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
+            print(f'Your final score is : {score}')
             play_again()
 
     # Players answer
@@ -174,18 +174,11 @@ def game(score):
                 if len(animals)<len(food) and len(animals) != 0:
                     print('\nNext word:\n')
                     scramble_word(animals)
-                elif len(animals) == 0:
-                    print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
-                    play_again()
+                
                 elif len(food)<len(animals) and len(food) != 0:
                     print('\nNext word:\n')
                     scramble_word(food)
-                elif len(food) == 0:
-                    print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
-                    play_again()
-                elif len(countries) == 0:
-                    print('\n🅶 🅰 🅼 🅴   🅾  🆅 🅴 🆁 \n')
-                    play_again()
+                
                 else:
                     print('\nNext word:\n')
                     scramble_word(countries)
@@ -220,7 +213,7 @@ def game(score):
             elif len(food)<len(animals):
                 scramble_word(food)
             else:
-                scramble_word(countries)
+                scramble_word(countries)  
         else:
             print('\nThe answer you provided is wrong.\n')
             if players_guess[0] != unscrambled_word[0]:
@@ -235,15 +228,18 @@ def game(score):
                     scramble_word(animals)
                 elif len(animals) == 0:
                     print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
+                    print(f'Your final score is : {score}')
                     play_again()
                 elif len(food)<len(animals) and len(food) != 0:
                     print('\nNext word:\n')
                     scramble_word(food)
                 elif len(food) == 0:
                     print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
+                    print(f'Your final score is : {score}')
                     play_again()
                 elif len(countries) == 0:
                     print('\n🅶 🅰 🅼 🅴   🅾  🆅 🅴 🆁 \n')
+                    print(f'Your final score is : {score}')
                     play_again()
                 else:
                     print('\nNext word:\n')
