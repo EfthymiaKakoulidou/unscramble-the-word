@@ -104,6 +104,8 @@ def game(score):
         Calls the play again function when there are no items left on the list.
         """
         while len(category) > 0:
+            time.sleep(2)
+            clear()
             print('\nYour scrambled word is:\n')
             unscrambled_word = random.choice(category)
             x = category.index(unscrambled_word)
@@ -117,7 +119,6 @@ def game(score):
             # Print the word with spaces between the letters
             for char in scrambled_word:
                 print(Colors.RED + char, end=" " + Colors.RESET)
-            
             players_answer(unscrambled_word, scrambled_word)
             
         else:
@@ -130,7 +131,6 @@ def game(score):
         """
         Player's input and validation
         """
-        
         players_guess = input('\nUnscramble here:\n'). upper()
         validation_words(players_guess, unscrambled_word,scrambled_word)      
 
@@ -138,7 +138,6 @@ def game(score):
         """
         Player's input and validation
         """
-        
         players_guess = input('\nUnscramble here:\n'). upper()
         validation_words2(players_guess, unscrambled_word,scrambled_word) 
 
@@ -221,6 +220,8 @@ def game(score):
                 scramble_word(countries)
         else:
             print('\nThe answer you provided is wrong.\n')
+            if players_guess[0] != unscrambled_word[0]:
+                print(f'Remember your word starts with {unscrambled_word[0]}.')
             print(f'\nYour score is {score}\n')
         while True:    
             retry = input('\nNo more hints.Do you want to try again? Y/N\nExit? E: \n').upper()
@@ -246,7 +247,7 @@ def game(score):
                     scramble_word(countries)
                     break
             elif retry == 'Y':
-                players_answer(unscrambled_word, scrambled_word)
+                players_answer2(unscrambled_word, scrambled_word)
                 break
             elif retry == 'E':
                 exit()
