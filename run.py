@@ -17,6 +17,8 @@ class Colors:
 
 score = 0
 
+print('\n🅄 🄽 🅂 🄲 🅁 🄰 🄼 🄱 🄻 🄴   🅃 🄷 🄴  🅆 🄾 🅁 🄳\n')
+
 print('Ready to unscrable the word?\n')
 username = input('Enter username: \n')
 print(f'Hello {username}!\n')
@@ -24,7 +26,19 @@ print('You will be given words whose letters are scrambled.\n')
 print('Your goal is to unscramble as many words as you can in 30s.\n')
 print('Please provide the number of the category of words you want to play with:\n')
 
+    
 def game(score):
+    
+    # Function for countdown
+
+    def countdown(t):
+        while len(animals) < 5:
+            mins, secs = divmod(t, 60) 
+            timer = '{:02d}:{:02d}'.format(mins, secs) 
+            print(timer, end="\r") 
+            time.sleep(1) 
+            t -= 1
+    t=30
     def reset_score():
         global score
         score = 0
@@ -34,17 +48,6 @@ def game(score):
     animals = ['CAT','DOG','HORSE','GIRAFFE','ELEPHANT']
     countries = ['GREECE','ITALY', 'SWEDEN', 'GERMANY', 'FRANCE']
     food = ['PASTA', 'RICE', 'EGGS', 'BREAD', 'PANCAKES']
-
-    # Function for countdown
-
-    def countdown(t):
-        while(t):
-            mins, secs = divmod(t, 60) 
-            timer = '{:02d}:{:02d}'.format(mins, secs) 
-            print(timer, end="\r") 
-            time.sleep(1) 
-            t -= 1
-    t=5
 
     # Player chooses category
 
@@ -85,7 +88,6 @@ def game(score):
         Calls the player's answer function.
         Calls the play again function when there are no items left on the list.
         """
-        global t
         while len(category) > 0:
             print('Your scrambled word is:\n')
             unscrambled_word = random.choice(category)
@@ -102,6 +104,7 @@ def game(score):
                 print(Colors.RED + char, end=" " + Colors.RESET)
             
             players_answer(unscrambled_word, scrambled_word)
+            
         else:
             print("Game Over")
             play_again()
@@ -110,11 +113,12 @@ def game(score):
         #os.system('cls' if os.name == 'nt' else 'clear')
 
     # Players answer
-
+    
     def players_answer(unscrambled_word, scrambled_word):
         """
         Player's input and validation
         """
+        
         players_guess = input('\nUnscramble here:\n')
         validation_words(players_guess, unscrambled_word,scrambled_word)      
 

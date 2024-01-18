@@ -33,3 +33,5 @@ Happy coding!
 
 
 https://www.studytonight.com/python-howtos/how-to-print-colored-text-in-python
+
+https://fsymbols.com/all/
