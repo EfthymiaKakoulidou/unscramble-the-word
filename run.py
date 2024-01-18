@@ -174,11 +174,21 @@ def game(score):
                 if len(animals)<len(food) and len(animals) != 0:
                     print('\nNext word:\n')
                     scramble_word(animals)
-                
+                elif len(animals) == 0:
+                    print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
+                    print(f'Your final score is : {score}')
+                    play_again()
                 elif len(food)<len(animals) and len(food) != 0:
                     print('\nNext word:\n')
                     scramble_word(food)
-                
+                elif len(food) == 0:
+                    print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
+                    print(f'Your final score is : {score}')
+                    play_again()
+                elif len(countries) == 0:
+                    print('\n🅶 🅰 🅼 🅴   🅾  🆅 🅴 🆁 \n')
+                    print(f'Your final score is : {score}')
+                    play_again()
                 else:
                     print('\nNext word:\n')
                     scramble_word(countries)
