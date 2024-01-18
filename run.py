@@ -24,8 +24,9 @@ print('\n🆆 🅾  🆁 🅳\n')
 print('Ready to unscrable the word?\n')
 username = input('Enter username: \n')
 print(f'Hello {username}!\n')
-print('You will be given words whose letters are scrambled.\n')
+print('You will be given 10 words whose letters are scrambled.\n')
 print('Your goal is to unscramble as many words as you can.\n')
+print('If you find the word without a hint you get 2 points.If you use a hint you get 1.\n')
 print('Please provide the number of the category of words you want to play with:\n')
 
     
@@ -152,7 +153,7 @@ def game(score):
         global score
         
         if str(players_guess) == str(unscrambled_word):
-            score = score + 1
+            score = score + 2
             print('Correct! The answer is: ' + Colors.GREEN + unscrambled_word + Colors.RESET + f'\nYour Score is : {score}\n')
             if len(animals)<len(food):
                 scramble_word(animals)
@@ -245,8 +246,6 @@ def game(score):
                     break
             elif retry == 'Y':
                 players_answer(unscrambled_word, scrambled_word)
-                break
-            elif retry == 'H':
                 break
             elif retry == 'E':
                 exit()
