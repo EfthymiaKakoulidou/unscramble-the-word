@@ -62,11 +62,11 @@ In this section, list all of your user stories for the project.
 
 - **Unscramble here**
 
-    - The player is asked to find the word. Even if he writes the answer in lowercase it is turning to upper to match the word.
+    - The player is asked to find the word. Even if he writes the answer in lowercase the game is turning them to upper to match the word.
 
 ![screenshot](documentation/feature05.png)
 
-- **If the player gets it right**
+- **If the player gets it right - Score update**
 
     - If the player gets it right a message that the answer is correct appears, the player gets 2 points and moves on to the next word.
 
@@ -90,13 +90,13 @@ In this section, list all of your user stories for the project.
 
 - **If the player wants to move on**
 
-    - If the player wants to move on then the next word appears and he/she gets no points
+    - If the player wants to move on then the next word appears and he/she gets no points.
 
 ![screenshot](documentation/feature08.png)
 
 - **If the player wants a hint**
 
-    - If the player wants a hint then he/she is given the first letter of the word. Now he/she can only get one point if he/she finds the right answer.
+    - If the player wants a hint then he/she is given the first letter of the word. Now he/she can only get 1 point if he/she finds the right answer.
 
 ![screenshot](documentation/feature10.png)
 
@@ -108,7 +108,7 @@ In this section, list all of your user stories for the project.
 
 - **If there are no more words to play then the game is over**
 
-    - There are 5 words of each category. If the player has played or skipped all of them then the game is over and his/hers final score is printed along with the choice to play again. If the player chooses to play again then the game starts over if not he/she exits the game.
+    - There are 5 words in each category. If the player has played or skipped all of them, then the game is over and his/hers final score is printed along with the choice to play again. If the player chooses to play again then the game starts over if not he/she exits the game.
 
 ![screenshot](documentation/feature12.png)
 
@@ -118,7 +118,7 @@ In this section, list all of your user stories for the project.
 - More features could be added in the future such as more categories to choose from:
     - This would challenge the player based on his/hers interests.
 - More hints could be offered.
-    - This would cause a more complex score-keeping and make it more interesting. It could reveal letters of the word at random places inside the word to make it more interesting (for example if the word was "TABLE" after 2 hints it could appear like this : _ A _ _ E).
+    - This would cause a more complex score-keeping and make it more interesting. It could reveal letters of the word at random places inside the word to make it more interesting (for example if the word was "TABLE" after 2 hints it could appear like this : _ A _ _ E and the score would be updated accordingly).
 
 ## Tools & Technologies Used
 
@@ -158,18 +158,27 @@ class Person:
 
 The primary functions used on this application are:
 
-- `get_sales_data()`
-    - Get sales figures input from the user.
-- `validate_data()`
-    - Converts all string values into integers.
-- `update_worksheet()`
-    - Update the relevant worksheet with the data provided.
-- `calculate_surplus_data()`
-    - Compare sales with stock and calculate the surplus for each item type.
-- `get_last_5_entries_sales()`
-    - Collects columns of data from sales worksheet.
-- `calculate_stock_data()`
-    -  Calculate the average stock for each item type, adding 10%.
+- `get username()`
+    -   Get the players username.
+- `reset_game()`
+    -   Resets all values when the game is over and the player chooses to play again.
+- `category_choice()`
+    -   Asks the players input on what category he/she wants to play with.
+- `scramble_word`
+    -   Chooses randomly an item from the list chosen.
+    -   Takes it out of the list.
+    -   Shuffles the item/word.
+    -   Calls the player's answer function.
+    -   Calls the play again function when there are no items left on the list..
+- `players_answer()`
+    - Players input and validation.
+- `validation_words()`
+    -  Validates the answer and offers a hint.
+    -  Raises error if the input is not correct.
+    -  Gives the option to retry.
+    -  Updates the score.
+- `play_again()`
+    - Gives the option to play again when the game is over.
 - `main()`
     - Run all program functions.
 
