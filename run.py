@@ -189,6 +189,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
     while True:
         if used_hint:
             retry = input(
+                f'\nRemember the word starts with {Colors.GREEN}{unscrambled_word[0]}{Colors.RESET}'
                 '\nDo you want to try again? Y/N'
                 '\nExit? E: \n').upper()
             
