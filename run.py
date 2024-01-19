@@ -126,7 +126,7 @@ def scramble_word():
     global category
 
     while len(category) > 0:
-        time.sleep(2)
+        time.sleep(1)
         clear()
         print('\nYour scrambled word is:\n')
         unscrambled_word = random.choice(category)
@@ -145,7 +145,6 @@ def scramble_word():
         print(f'Your final score is : {score}')
         play_again()
 
-
 # Players answer
 def players_answer(unscrambled_word, scrambled_word):
     """
@@ -161,7 +160,7 @@ def players_answer(unscrambled_word, scrambled_word):
 # Function that validates player's answer
 def validation_words(players_guess, unscrambled_word, scrambled_word):
     """
-    Validates the answer the first time and offers a hint.
+    Validates the answer and offers a hint.
     Raises error if the input is not correct
     Gives the option to retry
     Updates the score
@@ -169,7 +168,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
     global score
     global category
     global used_hint
-
+    # user's guess was right
     if str(players_guess) == str(unscrambled_word):
         if not used_hint:
             score = score + 2
@@ -192,6 +191,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
             retry = input(
                 '\nDo you want to try again? Y/N'
                 '\nExit? E: \n').upper()
+            
         else:
             retry = input(
                 '\nDo you want to try again without hint? Y/N'
@@ -209,7 +209,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
                 play_again()
 
         elif retry == 'Y':
-            used_hint = False
+            
             players_answer(unscrambled_word, scrambled_word)
             break
         elif retry == 'H':
