@@ -152,7 +152,7 @@ def players_answer(unscrambled_word, scrambled_word):
     """
     # Print the word with spaces between the letters
     for char in scrambled_word:
-        print(Colors.RED + char, end=" " + Colors.RESET)
+        print("   " + Colors.RED + char, end=" " + Colors.RESET)
     players_guess = input('\nUnscramble here:\n').upper()
     validation_words(players_guess, unscrambled_word, scrambled_word)
 
