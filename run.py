@@ -154,18 +154,16 @@ def players_answer(unscrambled_word, scrambled_word):
     # Print the word with spaces between the letters
     for char in scrambled_word:
         print("   " + Colors.RED + char, end=" " + Colors.RESET)
-    players_guess = input('\nUnscramble here:\n').upper()
-   
+    players_guess = input('\nUnscramble here:\n').upper() 
     validation_words(players_guess, unscrambled_word, scrambled_word)
-
 
 # Function that validates player's answer
 def validation_words(players_guess, unscrambled_word, scrambled_word):
     """
     Validates the answer and offers a hint.
-    Raises error if the input is not correct
-    Gives the option to retry
-    Updates the score
+    Raises error if the input is not correct.
+    Gives the option to retry.
+    Updates the score.
     """
     global score
     global category
@@ -192,6 +190,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         if used_hint:
             retry = input(
                 '\nDo you want to try again? Y/N'
+                '\nDo you want to be reminded of the hint? H'
                 '\nExit? E: \n').upper()    
         else:
             retry = input(
@@ -223,6 +222,8 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
             '\nThe first letter is: '
             f'{Colors.GREEN}{unscrambled_word[0]}{Colors.RESET}.\n'
         )
+        time.sleep(2)
+        clear()
         players_answer(unscrambled_word, scrambled_word)
 
 
