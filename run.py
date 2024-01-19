@@ -124,9 +124,10 @@ def scramble_word():
     """
     global score
     global category
-
+    global used_hint
+    used_hint = False
     while len(category) > 0:
-        time.sleep(1)
+        time.sleep(1.5)
         clear()
         print('\nYour scrambled word is:\n')
         unscrambled_word = random.choice(category)
@@ -154,6 +155,7 @@ def players_answer(unscrambled_word, scrambled_word):
     for char in scrambled_word:
         print("   " + Colors.RED + char, end=" " + Colors.RESET)
     players_guess = input('\nUnscramble here:\n').upper()
+   
     validation_words(players_guess, unscrambled_word, scrambled_word)
 
 
@@ -189,10 +191,8 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
     while True:
         if used_hint:
             retry = input(
-                f'\nRemember the word starts with {Colors.GREEN}{unscrambled_word[0]}{Colors.RESET}'
                 '\nDo you want to try again? Y/N'
-                '\nExit? E: \n').upper()
-            
+                '\nExit? E: \n').upper()    
         else:
             retry = input(
                 '\nDo you want to try again without hint? Y/N'
@@ -208,9 +208,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
                 print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
                 print(f'Your final score is : {score}')
                 play_again()
-
         elif retry == 'Y':
-            
             players_answer(unscrambled_word, scrambled_word)
             break
         elif retry == 'H':
