@@ -40,37 +40,38 @@ In this section, list all of your user stories for the project.
 
     - The title of the game printed in different letters to stick out.
 
-![screenshot](documentation/feature01.png)
+![screenshot](documentation/feature01.jpg)
 
 - **Username**
 
     - The game asks for the username so that it can greet the player and welcome him/her to the game. No numbers alloed here.
 
-![screenshot](documentation/feature02.png)
+![screenshot](documentation/feature02.jpg)
 
 - **Categoty choice**
 
     - To narrow down the range of words and make it easier for the player to direct his/hers thoughts towards a a specific group of words I added categories. The player chooses one and knows that the words he/she is going to play with are of that category.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/feature03.jpg)
+![screenshot](documentation/feature031.jpg)
 
 - **Scrambled Word**
 
     - The player gets the letters of the word who are capitals, printed in red and with a space between them so as to make them stick out of the rest of the text. It is these letters he/she is going to play with.
 
-![screenshot](documentation/feature04.png)
+![screenshot](documentation/feature04.jpg)
 
 - **Unscramble here**
 
     - The player is asked to find the word. Even if he writes the answer in lowercase the game is turning them to upper to match the word.
 
-![screenshot](documentation/feature05.png)
+![screenshot](documentation/feature05.jpg)
 
 - **If the player gets it right - Score update**
 
     - If the player gets it right a message that the answer is correct appears, the player gets 2 points and moves on to the next word.
 
-![screenshot](documentation/feature06.png)
+![screenshot](documentation/feature06.jpg)
 
 - **If the player's answer is wrong**
 
@@ -80,37 +81,37 @@ In this section, list all of your user stories for the project.
     3. To get a hint.
     4. To exit the game.
 
-![screenshot](documentation/feature07.png)
+![screenshot](documentation/feature07.jpg)
 
 - **If the player wants to try again**
 
     - If the player wants to try again without getting a hint still aiming for the 2 points then he/she tries again.
 
-![screenshot](documentation/feature08.png)
+![screenshot](documentation/feature08.jpg)
 
 - **If the player wants to move on**
 
     - If the player wants to move on then the next word appears and he/she gets no points.
 
-![screenshot](documentation/feature08.png)
+![screenshot](documentation/feature09.jpg)
+![screenshot](documentation/feature091.jpg)
 
 - **If the player wants a hint**
 
-    - If the player wants a hint then he/she is given the first letter of the word. Now he/she can only get 1 point if he/she finds the right answer.
+    - If the player wants a hint then he/she is given the first letter of the word. Now he/she can only get 1 point if he/she finds the right answer. There are no more hints so if he/she still gets it wrong he/she can be reminded of the hint again.
 
-![screenshot](documentation/feature10.png)
+![screenshot](documentation/feature10.jpg)
+![screenshot](documentation/feature101.jpg)
 
 - **If the player wants to exit**
 
     - If the player wants to exit he/she press "E" and exit the game.
 
-![screenshot](documentation/feature11.png)
-
 - **If there are no more words to play then the game is over**
 
     - There are 5 words in each category. If the player has played or skipped all of them, then the game is over and his/hers final score is printed along with the choice to play again. If the player chooses to play again then the game starts over if not he/she exits the game.
 
-![screenshot](documentation/feature12.png)
+![screenshot](documentation/feature12.jpg)
 
 
 ### Future Features
@@ -171,12 +172,12 @@ The primary functions used on this application are:
     -   Calls the player's answer function.
     -   Calls the play again function when there are no items left on the list..
 - `players_answer()`
-    - Players input and validation.
+    -   Players input and validation.
 - `validation_words()`
-    -  Validates the answer and offers a hint.
-    -  Raises error if the input is not correct.
-    -  Gives the option to retry.
-    -  Updates the score.
+    -   Validates the answer and offers a hint.
+    -   Raises error if the input is not correct.
+    -   Gives the option to retry.
+    -   Updates the score.
 - `play_again()`
     - Gives the option to play again when the game is over.
 - `main()`
@@ -294,14 +295,6 @@ Use this space to discuss any differences between the local version you've devel
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## Credits
-
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ### Content
 
