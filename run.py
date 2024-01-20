@@ -146,6 +146,7 @@ def scramble_word():
         print(f'Your final score is : {score}')
         play_again()
 
+
 # Players answer
 def players_answer(unscrambled_word, scrambled_word):
     """
@@ -154,8 +155,9 @@ def players_answer(unscrambled_word, scrambled_word):
     # Print the word with spaces between the letters
     for char in scrambled_word:
         print("   " + Colors.RED + char, end=" " + Colors.RESET)
-    players_guess = input('\nUnscramble here:\n').upper() 
+    players_guess = input('\nUnscramble here:\n').upper()
     validation_words(players_guess, unscrambled_word, scrambled_word)
+
 
 # Function that validates player's answer
 def validation_words(players_guess, unscrambled_word, scrambled_word):
@@ -191,7 +193,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
             retry = input(
                 '\nDo you want to try again? Y/N'
                 '\nDo you want to be reminded of the hint? H'
-                '\nExit? E: \n').upper()    
+                '\nExit? E: \n').upper()
         else:
             retry = input(
                 '\nDo you want to try again without hint? Y/N'
