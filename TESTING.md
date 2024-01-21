@@ -23,7 +23,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Responsiveness
 
-I've tested my deployed project on multiple devices to check for responsiveness issues.
+I've tested my deployed project on multiple devices to check for responsiveness issues (The template is given by CI so I cannot really control the responsiveness).
 
 | Device | Image | Notes |
 | --- | --- | --- |
@@ -76,7 +76,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | User Story | Screenshot |
 | --- | --- |
 | As a new site user, I would like to play, so that I can have fun. | 
-| As a new site user, I would like to check how many points I can get out of 10, so that I can ____________. | 
+| As a new site user, I would like to check how many points I can get out of 10. | 
 | As a returning site user, I would like to beat my last high score or my friends'. | 
 | As a returning site user, I would like to find out the answers to the words I did not get right.|
 
