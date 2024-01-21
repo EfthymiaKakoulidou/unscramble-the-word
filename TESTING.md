@@ -82,17 +82,10 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## Bugs
 
--`'ModuleNotFoundError'` when trying to import module from imported package
-
-    ![screenshot](documentation/bug03.png)
-
-    - To fix this, I _____________________.
-
 - `E501 line too long`
 
-    ![screenshot](documentation/bug04.png)
-
-    - To fix this, I _____________________.
+    - To fix this, I used the following syntax:
+    ![screenshot](documentation/bug01.jpg)
 
 -   A bug that I got while developing project is that sometimes the word was shuffled back to the original word. I did not want that to happen so I added the code to reshuffle the word if it was identical to the original word.
 
