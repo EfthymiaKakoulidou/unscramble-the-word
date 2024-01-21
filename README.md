@@ -295,5 +295,5 @@ No significant differences between the local and the deployment.
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going.
-- I would like to thank my partner Alexandros, allowing me to make this transition into software development.
+- I would like to thank my partner Alexandros, making it possible for me to make this transition into software development.
 
