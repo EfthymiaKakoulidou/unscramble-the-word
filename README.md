@@ -108,6 +108,7 @@ The scrambled word is red, meaning that the letters are in the wrong order, and 
     - This would challenge the player based on his/hers interests.
 - More hints could be offered.
     - This would cause a more complex score-keeping and make it more interesting. It could reveal letters of the word at random places inside the word to make it more interesting (for example if the word was "TABLE" after 2 hints it could appear like this : _ A _ _ E and the score would be updated accordingly).
+- A countdown or a timer could be added so that the user could find as many words as he/she can in certain amount of time.
 
 ## Tools & Technologies Used
 

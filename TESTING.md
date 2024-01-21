@@ -88,6 +88,7 @@ Defensive programming was manually tested with the below user acceptance testing
     ![screenshot](documentation/bug01.jpg)
 
 -   A bug that I got while developing project is that sometimes the word was shuffled back to the original word. I did not want that to happen so I added the code to reshuffle the word if it was identical to the original word.
+-   Something that I also tried during developing was to add a timer. I tried using threading to run 2 functions simultaneously.
 
 ## Unfixed Bugs
 
