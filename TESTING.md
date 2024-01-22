@@ -97,6 +97,8 @@ Defensive programming was manually tested with the below user acceptance testing
 -   After putting my project up for review on the #peer code review I got some feedback.
     One of the comments was that the player's choices, when he got the word wrong, should be more clear so I made the capital letters blue to stand out more and differentiate them from the scrambled word which is in red. I also changed the messages making them shorter and more comprehensible. 
     Another comment was that the blank answer was not handled as an error but it was taken a wrong answer. I fixed that by handling the blank answer as an error.
+-   One bug that I came across while playing the game was that the hint was appearing with a time sleep of 2 seconds. This gave the time to the player to type something , even he/she was not asked to type anything. In this case the game took that as the answer and validated it.  That caused confusion and bad user experience. I solved that by removing the time sleep and moving the message into the player's answer function. Now the hint is shown at  all times once used and is is not appearing just for 2 seconds.
+
 
 ## Unfixed Bugs
 
