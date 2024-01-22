@@ -253,6 +253,8 @@ def play_again():
         elif answer == 'Y':
             reset_game()
             category_choice()
+        elif len(answer) == 0:
+            print('Please provide an answer.')
         else:
             print(f'{answer} is invalid. Please try again.\n')
 
