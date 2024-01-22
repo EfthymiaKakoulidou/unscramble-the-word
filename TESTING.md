@@ -110,3 +110,5 @@ So even though "H" is not an option any more if the player enters "H" he/she wil
 ## Unfixed Bugs
 
 There are no unfixed bugs that I am aware of.
+
+Back to the README [README.md](README.md) file.
