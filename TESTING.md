@@ -49,11 +49,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | Username | | | | | |
 | | Feature is expected to display username when the user writes it | Tested the feature by typing a name | The feature behaved as expected, and it printed the username | Test concluded and passed | ![screenshot](documentation/feature001.jpg) ![screenshot](documentation/feature00101.jpg)|
 | | Feature is expected to display username when the user writes it | Tested the feature by writing numbers | The feature gives an error | I handled the error by setting it to "the answer is invalid" | ![screenshot](documentation/feature002.jpg) ![screenshot](documentation/feature00201.jpg) |
-| | Feature is expected to display username when the user writes it | Tested the feature by not writing anything | The feature gives an error | I handled the error by setting it to "Please provide username" | ![screenshot](documentation/feature002.jpg) ![screenshot](documentation/featureblankusername.jpg) |
+| | Feature is expected to display username when the user writes it | Tested the feature by not writing anything | The feature gives an error | I handled the error by setting it to "Please provide username" | ![screenshot](documentation/feature002.jpg) ![screenshot](documentation/blankusername.jpg) |
 | Category choice | | | | | |
 | | Feature is expected to accept just the numbers 1,2 or 3 as an answer | Tested the feature by typing 1,2 or 3 | The feature behaved as expected, and it chose a category | Test concluded and passed | ![screenshot](documentation/feature003.jpg) ![screenshot](documentation/feature00301.jpg)|
 | | Feature is expected to accept just the numbers 1,2 or 3 as an answer | Tested the feature by typing anything else | The feature throws an error | I handled the error with the message that the answer is invalid and the option for the player to try again. | ![screenshot](documentation/feature004.jpg)![screenshot](documentation/feature00401.jpg) |
-| | Feature is expected to accept just the numbers 1,2 or 3 as an answer | Tested the feature by not typing anything | The feature throws an error | I handled the error with the message "Please make a choice" | ![screenshot](documentation/feature004.jpg)![screenshot](documentation/featuremakechoice.jpg) |
+| | Feature is expected to accept just the numbers 1,2 or 3 as an answer | Tested the feature by not typing anything | The feature throws an error | I handled the error with the message "Please make a choice" | ![screenshot](documentation/makechoice.jpg) |
 | Scramble the word | | | | | |
 | | Feature is expected to take a word from the category chosen and shuffle its letters | Tested the feature by playing | The feature behaved as expected, and it printed the shuffled word | Test concluded and passed | ![screenshot](documentation/feature005.jpg) |
 | Validation of the player's answer| | | | | |
@@ -72,6 +72,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | After played all the words the feature is expected to check if the player wants to play again.| Tested the feature by typing "Y" | The feature behaved as expected, and it restarted the game | Test concluded and passed | ![screenshot](documentation/feature0014.jpg) ![screenshot](documentation/feature001401.jpg)|
 | | After played all the words the feature is expected to check if the player wants to play again.| Tested the feature by typing "N" | The feature behaved as expected, and exited the game | Test concluded and passed | ![screenshot](documentation/feature0015.jpg) ![screenshot](documentation/feature001501.jpg)|
 | | After played all the words the feature is expected to check if the player wants to play again.| Tested the feature by typing something else | The feature behaved as expected, and printed that the answer is invalid | Test concluded and passed | ![screenshot](documentation/feature0016.jpg)![screenshot](documentation/feature001601.jpg) |
+| | After played all the words the feature is expected to check if the player wants to play again.| Tested the feature by not typing anything | The feature behaved as expected, and printed 'Please provide an answer' | Test concluded and passed | ![screenshot](documentation/blankplayagain.jpg)
 
 
 ## User Story Testing
