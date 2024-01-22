@@ -159,6 +159,7 @@ def players_answer(unscrambled_word, scrambled_word):
     # Print the word with spaces between the letters
     for char in scrambled_word:
         print("   " + Colors.RED + char, end=" " + Colors.RESET)
+    print('\n')
     if used_hint:
         print(
             '\n\nThe first letter is: '
@@ -202,7 +203,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
     else:
         # user's guess was wrong
         print('\nThe answer you provided is wrong.\n')
-        print(f'Your score is {score}')
+        print(f'-----Your score is {score}-----')
     while True:
         if used_hint:
             retry = input(
