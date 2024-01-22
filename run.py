@@ -248,7 +248,7 @@ def play_again():
         answer = input('\nWould you like to play again Y/N?\n').upper()
         clear()
         if answer == 'N':
-            print('\nThanks for playing!\n')
+            print('\n🆃 🅷 🅰  🅽 🅺  🆈 🅾  🆄  🅵 🅾  🆁  🅿  🅻 🅰  🆈 🅸 🅽 🅶\n')
             exit()
         elif answer == 'Y':
             reset_game()
