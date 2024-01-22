@@ -43,6 +43,8 @@ def get_username():
                 clear()
                 print(f'Hello {username}!\n')
                 break
+            elif len(username) ==0:
+                print('Please provide username')
             else:
                 print(f'{username} is invalid. Please enter letters only\n')
         except ValueError as err:
@@ -106,7 +108,8 @@ def category_choice():
             print('\nYou chose "Food"\n')
             category = food
             break
-
+        elif len(number) == 0:
+            print('\nPlease make a choice.\n')
         else:
             print(f'\n{number} is invalid. Please try again.\n')
 

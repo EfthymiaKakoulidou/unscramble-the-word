@@ -13,6 +13,7 @@ The scrambled word is red, meaning that the letters are in the wrong order, and 
 
 - As a new site user, I would like to play, so that I can see how good I am in unscrambling words.
 - As a new site user, I would like to test and see how many points I can get, so that I can maybe have a contest with myself or my friends.
+- I am expecting to take clear instructions for the game and to always know during the game what to do. I do not want to be able to do something that will break the game or cause frustration.
 
 ### Returning Site Users
 
@@ -109,6 +110,7 @@ The scrambled word is red, meaning that the letters are in the wrong order, and 
 - More hints could be offered.
     - This would cause a more complex score-keeping and make it more interesting. It could reveal letters of the word at random places inside the word to make it more interesting (for example if the word was "TABLE" after 2 hints it could appear like this : _ A _ _ E and the score would be updated accordingly).
 - A countdown or a timer could be added so that the user could find as many words as he/she can in certain amount of time.
+- A highscore board should also be fun to be added.
 
 ## Tools & Technologies Used
 
@@ -123,8 +125,7 @@ The scrambled word is red, meaning that the letters are in the wrong order, and 
 
 ### Flowchart
 
-To follow best practice, a flowchart was created for the app's logic,
-and mapped out before coding began using a free version of [Draw.io](https://www.draw.io).
+To follow best practice, a flowchart was created for the app's logic, using a free version of [Draw.io](https://www.draw.io).
 
 Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
 
