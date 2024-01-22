@@ -105,7 +105,7 @@ At this point there is a chance that he/she inputs "H" that will give:
 
 ![screenshot](documentation/bug3.jpg).
 
-So even though "H" is not an option any more if the player enters "H" he/she will get to see the hint again and not an error.
+So even though "H" is not an option any more if the player enters "H" he/she will get to see the hint again and be reminded that he/she only get one hint. This away I am covering all the possible answers.
 
 
 ## Unfixed Bugs
