@@ -184,7 +184,8 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         used_hint = False
         # scramble using the same category
         scramble_word()
-    elif len(players_guess) == 0 :
+        # user does not provide an answer
+    elif len(players_guess) == 0:
         print(
             '\nPlease provide an answer.'
             f'\nYour Score is : {score}\n'
@@ -196,19 +197,19 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
     while True:
         if used_hint:
             retry = input(
-                f'\nDo you want to try again? {Colors.RED}Y/N{Colors.RESET}'
-                f'\nSee the hint again? {Colors.RED}H{Colors.RESET}'
-                f'\nExit? {Colors.RED}E{Colors.RESET}: \n').upper()
+                f'\nDo you want to try again? {Colors.BLUE}Y/N{Colors.RESET}'
+                f'\nSee the hint again? {Colors.BLUE}H{Colors.RESET}'
+                f'\nExit? {Colors.BLUE}E{Colors.RESET}: \n').upper()
         else:
             retry = input(
-                f'\nDo you want to try again? {Colors.RED}Y/N{Colors.RESET}'
-                f'\nDo you want a hint? {Colors.RED}H{Colors.RESET}'
-                f'\nExit? {Colors.RED}E{Colors.RESET}: \n').upper()
+                f'\nDo you want to try again? {Colors.BLUE}Y/N{Colors.RESET}'
+                f'\nDo you want a hint? {Colors.BLUE}H{Colors.RESET}'
+                f'\nExit? {Colors.BLUE}E{Colors.RESET}: \n').upper()
         clear()
         if retry == 'N':
             clear()
             if len(category) != 0:
-                print('\nLoading next word\n')
+                print('\nLoading next word...\n')
                 scramble_word()
             else:
                 print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
