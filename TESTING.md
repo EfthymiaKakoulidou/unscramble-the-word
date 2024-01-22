@@ -97,9 +97,17 @@ Defensive programming was manually tested with the below user acceptance testing
 -   After putting my project up for review on the #peer code review channel on slack I got some feedback.
     One of the comments was that the player's choices, when he got the word wrong, should be more clear so I made the capital letters blue to stand out more and differentiate them from the scrambled word which is in red. I also changed the messages making them shorter and more comprehensible. 
     Another comment was that the blank answer was not handled as an error but it was taken a wrong answer. I fixed that by handling the blank answer as an error.
--   One bug that I came across while playing the game was that the hint was appearing with a time sleep of 2 seconds. The player had seen the scrambled word and the hint so tese 2 secondes gave him the time to type something, even if he/she was not asked to type anything. In this case the game took that typing, as the answer and validated it.  That caused confusion and was a bad user experience. I solved that by removing the time sleep and moving the message into the player's answer function. Now the hint is shown at all times once used and I avoided having that weak 2 seconds part of the game.
+-   One bug that I came across while playing the game was that the hint was appearing with a time sleep of 2 seconds. The player had seen the scrambled word and the hint so these 2 seconds gave him the time to type something, even if he/she was not asked to do it. In this case the game took that typing, as the answer and validated it. That caused confusion and was a bad user experience. I solved that by removing the time sleep and moving the message into the player's answer function. Now the hint is shown at all times once used and I avoided having that weak 2 seconds part of the game. There is a time sleep also after the player chooses category and when the player answers correct. I believe these 2 work fine as the player is not in the the process of finding a word so he/she does not have the urge to type anything.
+-   ![screenshot](documentation/bug2.jpg)
+
+When the player has used the hint he/she gets 3 options "Y/N" and "E".
+At this point there is a chance that he/she inputs "H" that will give:
+
+![screenshot](documentation/bug3.jpg).
+
+So even though "H" is not an option any more if the player enters "H" he/she will get to see the hint again and not an error.
 
 
 ## Unfixed Bugs
 
-There are no remaining bugs that I am aware of.
+There are no unfixed bugs that I am aware of.

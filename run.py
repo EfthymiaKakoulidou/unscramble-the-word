@@ -226,6 +226,9 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         elif retry == 'Y':
             players_answer(unscrambled_word, scrambled_word)
             break
+        elif retry == 'H' and used_hint:
+            print('You only get one hint. The first letter of the word.\n')
+            break
         elif retry == 'H':
             used_hint = True
             break
