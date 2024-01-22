@@ -226,6 +226,10 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
             break
         elif retry == 'E':
             exit()
+        elif len(retry) == 0:
+            print(
+            '\nPlease provide an answer.'
+        )
         else:
             print('\nYour input is invalid.\n')
     if retry == 'H':
