@@ -89,6 +89,9 @@ Defensive programming was manually tested with the below user acceptance testing
 
 -   A bug that I got while developing project is that sometimes the word was shuffled back to the original word. I did not want that to happen so I added the code to reshuffle the word if it was identical to the original word.
 -   Something that I also tried during developing was to add a timer. I tried using threading to run 2 functions simultaneously. That caused many issues and I decided not to use it in the end. 
+-   After putting my project up for review on the #peer code review I got some feedback.
+    One of the comments was that the player's choices should be more clear so I made the capital letters red to stand out more.
+    Another comment was that the blank answer was not handled as an error but it is taken a wrong answer. I fixed that by handling the blank answer as an error.
 
 ## Unfixed Bugs
 

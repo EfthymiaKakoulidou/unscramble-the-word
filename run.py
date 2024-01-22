@@ -184,6 +184,12 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         used_hint = False
         # scramble using the same category
         scramble_word()
+    elif len(players_guess) == 0 :
+        print(
+            '\nPlease provide an answer.'
+            f'\nYour Score is : {score}\n'
+        )
+
     else:
         # user's guess was wrong
         print('\nThe answer you provided is wrong.\n')
@@ -191,14 +197,14 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
     while True:
         if used_hint:
             retry = input(
-                '\nDo you want to try again? Y/N'
-                '\nDo you want to be reminded of the hint? H'
-                '\nExit? E: \n').upper()
+                f'\nDo you want to try again? {Colors.RED}Y/N{Colors.RESET}'
+                f'\nDo you want to be reminded of the hint? {Colors.RED}H{Colors.RESET}'
+                f'\nExit? {Colors.RED}E{Colors.RESET}: \n').upper()
         else:
             retry = input(
-                '\nDo you want to try again without hint? Y/N'
-                '\nDo you want a hint? H'
-                '\nExit? E: \n').upper()
+                f'\nDo you want to try again? {Colors.RED}Y/N{Colors.RESET}'
+                f'\nDo you want a hint? {Colors.RED}H{Colors.RESET}'
+                f'\nExit? {Colors.RED}E{Colors.RESET}: \n').upper()
         clear()
         if retry == 'N':
             clear()
@@ -218,7 +224,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         elif retry == 'E':
             exit()
         else:
-            print('\nYour answer is invalid.\n')
+            print('\nYour input is invalid.\n')
     if retry == 'H':
         print(
             '\nThe first letter is: '
