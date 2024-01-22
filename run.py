@@ -43,7 +43,7 @@ def get_username():
                 clear()
                 print(f'Hello {username}!\n')
                 break
-            elif len(username) ==0:
+            elif len(username) == 0:
                 print('Please provide username')
             else:
                 print(f'{username} is invalid. Please enter letters only\n')
