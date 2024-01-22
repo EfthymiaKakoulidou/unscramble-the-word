@@ -142,7 +142,6 @@ def scramble_word():
         while word == list(unscrambled_word):
             random.shuffle(word)
         scrambled_word = str(''.join(word))
-
         players_answer(unscrambled_word, scrambled_word)
     else:
         print('\n🅶 🅰  🅼 🅴   🅾  🆅 🅴 🆁 \n')
