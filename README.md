@@ -1,23 +1,23 @@
 # [UNSCRAMBLE THE WORD](https://unscramble-the-word-17d105fa8470.herokuapp.com)
 
-Unscramble the word is a game where the player is called to find the word whose letters have been scrambled. If the player gets it right withour using a hint he/she gets 2 points. If he/ she gets a hint, which is the first letter, then he/she gets one point. 
+Unscramble the word is a game where the player is called to find the word whose letters have been scrambled. If the player gets it right without using a hint he/she gets 2 points. If he/ she gets a hint, which is the first letter, then he/she gets 1 point. 
 
 ## UX
 
-I chose to use different fonts for the tile of the game as well as the end of the game so as to make it clear where the game begins and ends. I chose a font that reminded me of the very well known game "Scramble" which also is a game of finding words given some letters. 
-The scrambled word is red, meaning that the letters are in the wrong order, and is appearing green when the player finds the right answer.
+I chose to use different fonts for the title of the game as well as at the end of the game so as to make it clear where the game begins and ends. I chose a font that reminded me of the very well known game "Scramble" which also is a game of finding words given some letters. 
+The scrambled word is red, meaning that the letters are in the wrong order, and it is appearing green when the player finds the right answer.
 
 ## User Stories
 
 ### New Site Users
 
-- As a new site user, I would like to play, so that I can see how good I am in unscrambling words.
+- As a new site user, I would like to play, so that I can see how good I am at unscrambling words.
 - As a new site user, I would like to test and see how many points I can get, so that I can maybe have a contest with myself or my friends.
 - I am expecting to take clear instructions for the game and to always know during the game what to do. I do not want to be able to do something that will break the game or cause frustration.
 
 ### Returning Site Users
 
-- As a returning site user, I would like to retry the words I have skipped, so that I can know the answer.
+- As a returning site user, I would like to retry the words I have skipped, so as to find out the answer.
 - As a returning site user, I would like to improve my highscore.
 
 ## Features
@@ -33,7 +33,7 @@ The scrambled word is red, meaning that the letters are in the wrong order, and 
 
 - **Username**
 
-    - The game asks for the username so that it can greet the player and welcome him/her to the game. No numbers alloed here.
+    - The game asks for the username so that it can greet the player and welcome him/her to the game. No numbers allowed here.
 
 ![screenshot](documentation/feature02.jpg)
 
@@ -142,7 +142,7 @@ class Colors:
 The primary functions used on this application are:
 
 - `get username()`
-    -   Get the players username.
+    -   Gets the players username.
 - `reset_game()`
     -   Resets all values when the game is over and the player chooses to play again.
 - `category_choice()`
@@ -156,9 +156,9 @@ The primary functions used on this application are:
 - `players_answer()`
     -   Players input and validation.
 - `validation_words()`
-    -   Validates the answer and offers a hint.
+    -   Validates the answer.
     -   Raises error if the input is not correct.
-    -   Gives the option to retry.
+    -   Gives the option to retry nad offers a hint.
     -   Updates the score.
 - `play_again()`
     - Gives the option to play again when the game is over.
