@@ -189,7 +189,6 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
             '\nPlease provide an answer.'
             f'\nYour Score is : {score}\n'
         )
-
     else:
         # user's guess was wrong
         print('\nThe answer you provided is wrong.\n')
@@ -198,7 +197,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         if used_hint:
             retry = input(
                 f'\nDo you want to try again? {Colors.RED}Y/N{Colors.RESET}'
-                f'\nDo you want to be reminded of the hint? {Colors.RED}H{Colors.RESET}'
+                f'\nSee the hint again? {Colors.RED}H{Colors.RESET}'
                 f'\nExit? {Colors.RED}E{Colors.RESET}: \n').upper()
         else:
             retry = input(
