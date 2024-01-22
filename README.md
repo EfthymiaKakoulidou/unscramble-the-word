@@ -90,7 +90,6 @@ The scrambled word is red, meaning that the letters are in the wrong order, and 
     - If the player wants a hint then he/she is given the first letter of the word. Now he/she can only get 1 point if he/she finds the right answer. There are no more hints so if he/she still gets it wrong he/she can be reminded of the hint again.
 
 ![screenshot](documentation/feature10.jpg)
-![screenshot](documentation/feature101.jpg)
 
 - **If the player wants to exit**
 
