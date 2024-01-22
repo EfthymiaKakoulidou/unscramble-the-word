@@ -161,9 +161,9 @@ def players_answer(unscrambled_word, scrambled_word):
         print("   " + Colors.RED + char, end=" " + Colors.RESET)
     if used_hint:
         print(
-        '\n\nThe first letter is: '
-        f'{Colors.GREEN}{unscrambled_word[0]}{Colors.RESET}.\n'
-    )
+            '\n\nThe first letter is: '
+            f'{Colors.GREEN}{unscrambled_word[0]}{Colors.RESET}.\n'
+        )
     players_guess = input('\nUnscramble here:\n').upper()
     validation_words(players_guess, unscrambled_word, scrambled_word)
 
@@ -233,12 +233,11 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
             exit()
         elif len(retry) == 0:
             print(
-            '\nPlease provide an answer.'
-        )
+                '\nPlease provide an answer.'
+            )
         else:
             print('\nYour input is invalid.\n')
     if retry == 'H':
-        
         players_answer(unscrambled_word, scrambled_word)
 
 
