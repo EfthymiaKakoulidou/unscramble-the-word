@@ -155,9 +155,15 @@ def players_answer(unscrambled_word, scrambled_word):
     """
     Player's input and validation
     """
+    global used_hint
     # Print the word with spaces between the letters
     for char in scrambled_word:
         print("   " + Colors.RED + char, end=" " + Colors.RESET)
+    if used_hint:
+        print(
+        '\n\nThe first letter is: '
+        f'{Colors.GREEN}{unscrambled_word[0]}{Colors.RESET}.\n'
+    )
     players_guess = input('\nUnscramble here:\n').upper()
     validation_words(players_guess, unscrambled_word, scrambled_word)
 
@@ -201,7 +207,6 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         if used_hint:
             retry = input(
                 f'\nDo you want to try again? {Colors.BLUE}Y/N{Colors.RESET}'
-                f'\nSee the hint again? {Colors.BLUE}H{Colors.RESET}'
                 f'\nExit? {Colors.BLUE}E{Colors.RESET}: \n').upper()
         else:
             retry = input(
@@ -233,12 +238,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         else:
             print('\nYour input is invalid.\n')
     if retry == 'H':
-        print(
-            '\nThe first letter is: '
-            f'{Colors.GREEN}{unscrambled_word[0]}{Colors.RESET}.\n'
-        )
-        time.sleep(2)
-        clear()
+        
         players_answer(unscrambled_word, scrambled_word)
 
 
@@ -252,7 +252,10 @@ def play_again():
         answer = input('\nWould you like to play again Y/N?\n').upper()
         clear()
         if answer == 'N':
-            print('\n🆃 🅷 🅰  🅽 🅺  🆈 🅾  🆄  🅵 🅾  🆁  🅿  🅻 🅰  🆈 🅸 🅽 🅶\n')
+            print('\n🆃 🅷 🅰  🅽 🅺\n')
+            print('\n🆈 🅾  🆄\n')
+            print('\n🅵 🅾  🆁\n')
+            print('\n🅿  🅻 🅰  🆈 🅸 🅽 🅶\n')
             exit()
         elif answer == 'Y':
             reset_game()
