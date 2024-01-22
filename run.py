@@ -189,7 +189,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
             '\nCorrect! The answer is: '
             f'{Colors.GREEN}{unscrambled_word}{Colors.RESET} '
             f'\n-----Your Score is : {score}-----\n'
-        )       
+        )
         used_hint = False
         # scramble using the same category
         scramble_word()
