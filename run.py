@@ -130,6 +130,8 @@ def scramble_word():
     global used_hint
     used_hint = False
     while len(category) > 0:
+        time.sleep(1.5)
+        clear()
         print('\nYour scrambled word is:\n')
         unscrambled_word = random.choice(category)
         ndx = category.index(unscrambled_word)
@@ -187,8 +189,8 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
         print(
             '\nCorrect! The answer is: '
             f'{Colors.GREEN}{unscrambled_word}{Colors.RESET} '
-            f'\nYour Score is : {score}\n'
-        )
+            f'\n-----Your Score is : {score}-----\n'
+        )       
         used_hint = False
         # scramble using the same category
         scramble_word()
