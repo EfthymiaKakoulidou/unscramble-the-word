@@ -158,7 +158,7 @@ The primary functions used on this application are:
 - `validation_words()`
     -   Validates the answer.
     -   Raises error if the input is not correct.
-    -   Gives the option to retry nad offers a hint.
+    -   Gives the option to retry and offers a hint.
     -   Updates the score.
 - `play_again()`
     - Gives the option to play again when the game is over.
@@ -171,7 +171,7 @@ I've used the following Python packages and external imported packages.
 
 - `time`: used for adding time delays
 - `os`: used for adding a `clear()` function
-- `random`: used to get a random choice from a list
+- `random`: used to get a random choice from a list and shuffle the word
 
 ## Testing
 
@@ -287,13 +287,13 @@ No significant differences between the local and the deployment.
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Fsymbols](https://fsymbols.com/) | Title and game over | image | start and end |
+| [Fsymbols](https://fsymbols.com/) | Title and game over | font | start and end |
 
 
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the feedback and the moral support; it kept me going.
 - I would like to thank my partner Alexandros, making it possible for me to make this transition into software development.
 

@@ -29,7 +29,6 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | --- | --- | --- |
 | Desktop | ![screenshot](documentation/responsive-desktop.jpg) | Works as expected |
 | Mobile | ![screenshot](documentation/responsive-mobile01.jpg) | Works as expected |
-| Mobile | ![screenshot](documentation/responsive-mobile02.jpg) | Works as expected |
 
 ## Lighthouse Audit
 
