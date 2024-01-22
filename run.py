@@ -197,7 +197,7 @@ def validation_words(players_guess, unscrambled_word, scrambled_word):
     elif len(players_guess) == 0:
         print(
             '\nPlease provide an answer.'
-            f'\nYour Score is : {score}\n'
+            f'\n-----Your Score is : {score}-----\n'
         )
     else:
         # user's guess was wrong
