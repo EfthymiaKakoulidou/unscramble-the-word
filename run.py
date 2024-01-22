@@ -130,8 +130,6 @@ def scramble_word():
     global used_hint
     used_hint = False
     while len(category) > 0:
-        time.sleep(1)
-        clear()
         print('\nYour scrambled word is:\n')
         unscrambled_word = random.choice(category)
         ndx = category.index(unscrambled_word)
